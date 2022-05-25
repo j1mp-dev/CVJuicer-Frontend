@@ -8,7 +8,7 @@ function MainPage() {
         <div>
             <Navbar></Navbar>
             <div class="create-cv-block">
-                <Button variant="contained" disableElevation>
+                <Button variant="contained" href="/create-cv" disableElevation>
                     Criar curriculo
                 </Button>
             </div>

@@ -1,6 +1,17 @@
 .navbar {
     height: 100px;
     width: 100%;
-    background-color: orange;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     color: black;
+}
+
+.logo {
+    line-height: 100px;
+    margin-left: 25px;
+}
+
+.logo a, a:hover, a:focus, a:active {
+    text-decoration: none !important;
+    color: inherit !important;
 }
