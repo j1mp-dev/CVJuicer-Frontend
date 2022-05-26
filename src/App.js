@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage';
 import CreateCvPage from './pages/CreateCvPage';
 
 function App() {
+
   return (
     <BrowserRouter>
             <Routes>

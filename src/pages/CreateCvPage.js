@@ -60,6 +60,196 @@ function CreateCvPage() {
     setActiveStep(0);
   };
 
+
+  const requestOptions = {
+    method: "POST",
+    headers: {"Content-Type": "application/json", 
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+    'Authorization': 'Bearer key'},
+    body: JSON.stringify({
+      html: `<!DOCTYPE html>
+      <html lang="en">
+          <head>
+              <meta charset="UTF-8" />
+              <title>Resume</title>
+      
+              
+      
+              <!--<link rel="stylesheet" href="style.css" />-->
+              <style>
+                  @Page {
+                      margin: 0;
+                  }
+                  
+                  @font-face {
+                    font-family: "Roboto";
+                    src: url("Roboto-Bold.ttf");
+                  }
+
+                  body {
+                      font-family: "Nunito", sans-serif;
+                      margin: 0;
+                  }
+      
+                  h1,
+                  h2 {
+                      // font-family: 'Koulen', cursive;
+                      margin-top: 0.5rem;
+                      margin-bottom: 0.5rem;
+                  }
+      
+                  h3 {
+                      font-weight: bolder;
+                      margin-top: 0.5rem;
+                      margin-bottom: 0.5rem;
+                  }
+      
+                  .header-avatar {
+                      height: 180px;
+                      width: 18%;
+                      float: left;
+                  }
+      
+                  .avatar {
+                      width: 100%;
+                      height: 100%;
+                  }
+      
+                  .header-info {
+                      background-color: #ffcd38;
+                      height: 180px;
+                      width: 77%;
+                      padding-left: 4%;
+                      float: right;
+                  }
+                  
+                  .clear-float {
+                      clear: both;
+                  }
+                  
+                  .person-title {
+                      font-size: 2.4rem;
+                  }
+      
+                  .main {
+                      padding: 2% 14% 2% 14%;
+                  }
+      
+                  .main-title {
+                      color: #fff;
+                      background-color: black;
+                      display: inline-block;
+                      letter-spacing: 4px;
+                      padding: 0 15px;
+                  }
+      
+                  .bolder-text {
+                      font-weight: bold;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="header">
+                  <div class="header-avatar">
+                      <img
+                          class="avatar"
+                          src="https://engineering.unl.edu/images/staff/Kayla-Person.jpg"
+                      />
+                  </div>
+                  <div class="header-info">
+                      <h1 class="person-title">Layla Smith</h1>
+                      <h3 class="person-profession">Frontend</h3>
+                  </div>
+                  <div class="clear-float"></div>
+              </div>
+      
+              <div class="main">
+                  <div class="main-details">
+                      <h2 class="main-title">Details</h2>
+                      <p class="country-field">Portugal</p>
+                      <p class="email-field">laylasmith@gmail.com</p>
+                      <p class="phone-field">967564734</p>
+                  </div>
+      
+                  <div class="main-profile">
+                      <h2 class="main-title">Profile</h2>
+                      <p class="profile-description">
+                          Lorem Ipsum is simply dummy text of the printing and
+                          typesetting industry. Lorem Ipsum has been the industry's
+                          standard dummy text ever since the 1500s, when an unknown
+                          printer took a galley of type and scrambled it to make a
+                          type specimen book. It has survived not only five centuries,
+                          but also the leap into electronic typesetting, remaining
+                          essentially unchanged. It was popularised in the 1960s with
+                          the release of Letraset sheets containing Lorem Ipsum
+                          passages, and more recently with desktop publishing software
+                          like Aldus PageMaker including versions of Lorem Ipsum.
+                      </p>
+                  </div>
+      
+                  <div class="main-education">
+                      <h2 class="main-title">Education</h2>
+                      <div class="education-description">
+                          <p class="education-info bolder-text">
+                              Redes informaticas, Atec, Palmela
+                          </p>
+                          <p class="education-date">February 2022 - March 2022</p>
+                          <p class="education-content">
+                              - Html<br />
+                              - CSS<br />
+                              Lot a things
+                          </p>
+                      </div>
+                  </div>
+      
+                  <div class="main-employment-history">
+                      <h2 class="main-title">Employment History</h2>
+                      <div class="job-description">
+                          <p class="job-info bolder-text">
+                              Engineer, Google, San Francisco
+                          </p>
+                          <p class="job-date">February 2022 - March 2022</p>
+                          <p class="job-content">
+                              - Html<br />
+                              - CSS<br />
+                              Lot a things
+                          </p>
+                      </div>
+                  </div>
+      
+                  <div class="main-skills">
+                      <h2 class="main-title">Skills</h2>
+                      <ul>
+                          <li>Java</li>
+                          <li>Python</li>
+                          <li>React</li>
+                          <li>JavaScript</li>
+                      </ul>
+                  </div>
+      
+                  <div class="main-languages">
+                      <h2 class="main-title">Languages</h2>
+                      <ul>
+                          <li>Portuguese</li>
+                          <li>English</li>
+                          <li>German</li>
+                      </ul>
+                  </div>
+              </div>
+          </body>
+      </html>
+      `,
+    }),
+  };
+  fetch("http://localhost:10257/cv/htmlToPdf", requestOptions).then(
+    (response) => {
+      console.log(response);
+    }
+  );
+
   return (
     <div>
       <Navbar></Navbar>
